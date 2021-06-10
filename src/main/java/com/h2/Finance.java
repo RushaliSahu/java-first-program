@@ -37,11 +37,13 @@ public class Finance{
     public static void main(String args[])
     {
         String command=args[0];
-        if(commandsToUsage.containsKey(command)!=true)
+        if(!commandsToUsage.containsKey(command)) {
             System.out.println(command + ": command not found");
+            return;
+        }
         boolean isValidCommand=validateCommandArguments(args);
         if(isValidCommand!=true) {
-            commandsToUsage.get(args[0]);
+            System.out.println(commandsToUsage.get(args[0]));
             return;
         }
         executeCommand(command,Arrays.copyOfRange(args,1,args.length));
