@@ -1,10 +1,8 @@
 package com.h2;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Map;
 
-public class Finance {
+public class Finance{
     public final static String BEST_LOAN_RATES="bestLoanRates";
     public final static String SAVINGS_CALCULATOR="savingsCalculator";
     public final static String MORTGAGE_CALCULATOR="mortgageCalculator";
@@ -13,12 +11,12 @@ public class Finance {
             MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>");
     private static boolean validateCommandArguments(String[] args)
     {
-    switch (args[0]){
-        case BEST_LOAN_RATES: if(args.length==1) return true; else return false;
-        case SAVINGS_CALCULATOR: if(args.length==3) return true; else return false;
-        case MORTGAGE_CALCULATOR: if(args.length==4) return true; else return false;
-    }
-    return false;
+        switch (args[0]){
+            case BEST_LOAN_RATES: if(args.length==1) return true; else return false;
+            case SAVINGS_CALCULATOR: if(args.length==3) return true; else return false;
+            case MORTGAGE_CALCULATOR: if(args.length==4) return true; else return false;
+        }
+        return false;
     }
     private static void executeCommand(String command,String[] arguments){
         switch(command){
